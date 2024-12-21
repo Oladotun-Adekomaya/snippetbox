@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"html/template"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -11,6 +13,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+
+	ts, err := template.ParseFiles("./ui/html/pages/home.tmpl.html")
+
 	fmt.Fprint(w, "Hello from Snippetbox")
 }
 
