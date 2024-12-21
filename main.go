@@ -14,6 +14,8 @@ func snippetView(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Display a specific snippet...")
 }
 
+func snippetCreate()
+
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", home)
