@@ -2,4 +2,5 @@
 pg 66 -
 Learnt about template composition, how to create and use html templates.
 Learnt how to serve html templates from server
-Learnt hoe to embed partials into html
+Learnt how to embed partials into html
+Learnt how to create and use a file server to serve static files like css, js and images.
