@@ -15,8 +15,14 @@ func home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Initailize a slice containing the path to the two files
+	files := []string{
+		"./ui/html/base.tmpl.html",
+		"./ui/html/pages/home.tmpl.html",
+	}
+
 	// Parse the html template
-	ts, err := template.ParseFiles("./ui/html/pages/home.tmpl.html")
+	ts, err := template.ParseFiles(files...)
 
 	if err != nil {
 		log.Println(err.Error())
@@ -24,8 +30,8 @@ func home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Applies the parsed template to w(the response)
-	err = ts.Execute(w, nil)
+	// Apply the parsed html template to w(the response)
+	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
 		log.Println(err.Error())
 		http.Error(w, "Internal Server Error", 500)
