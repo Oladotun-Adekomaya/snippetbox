@@ -1,6 +1,9 @@
 24/12/24
-pg 66 -
-Learnt about template composition, how to create and use html templates.
+pg 66 - 88
+Today, I learnt a lot of things abpout web development in Golang.
+I learnt how to create and us html templates.
 Learnt how to serve html templates from server
-Learnt how to embed partials into html
+Learnt how to embed partials into html template
+Learnt about template composition, how to create and use html templates.
+
 Learnt how to create and use a file server to serve static files like css, js and images.
