@@ -1,2 +1,5 @@
 24/12/24
 pg 66 -
+Learnt about template composition, how to create and use html templates.
+Learnt how to serve html templates from server
+Learnt hoe to embed partials into html
