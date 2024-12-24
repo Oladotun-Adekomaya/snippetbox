@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -22,6 +23,8 @@ func main() {
 
 	// Handle requests to file path
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+
+	log.New()
 
 	log.Printf("Starting server on %s", *addr)
 	err := http.ListenAndServe(*addr, mux)
