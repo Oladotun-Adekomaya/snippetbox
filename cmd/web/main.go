@@ -24,12 +24,11 @@ func main() {
 	// Handle requests to file path
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
+	// Loggers
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Lshortfile)
-
-	log.Printf("Starting server on %s", *addr)
+	infoLog.Printf("Starting server on %s", *addr)
 	err := http.ListenAndServe(*addr, mux)
-	log.Println(err)
-	log.Fatal(err)
+	errorLog.Fatal(err)
 }
