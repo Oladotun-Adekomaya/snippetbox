@@ -11,7 +11,7 @@ import (
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	// Check if the path is exactly '/'
 	if r.URL.Path != "/" {
-		http.NotFound(w, r)
+		app.notFound(w)
 		return
 	}
 
