@@ -7,4 +7,27 @@ Learnt how to embed partials into html template
 Learnt how to serve html templates from server
 Learnt how to create and use a file server to serve static files like css, js and images.
 
+25/12/24
+pg 88 - 122
 
+Today, what i learnt was all about code refactoring in Golang.
+
+I learnt;
+
+How to set configuration settings for Golang applications at runtime using command-line flags.
+
+How to centralize error handling.
+
+How to make dependencies available to packages that need them through dependency injection.
+
+How to improve Golang application log messages to include more information.
+
+Today, i learnt 
+How to set configuration settings for Golang applications at runtime using command-line flags.
+
+How to improve Golang application log messages to include more information, and manage them diﬀerently depending on the type (or level) of log message.
+
+Make dependencies available to your handlers in a way that’s extensible, type-safe, and doesn’t get in the way when it comes to
+writing tests.
+
+Centralize error handling.
