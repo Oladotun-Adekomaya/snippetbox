@@ -7,6 +7,11 @@ import (
 	"os"
 )
 
+type application struct {
+	errorLog *log.Logger
+	infoLog  *log.Logger
+}
+
 func main() {
 	// command line option
 	addr := flag.String("addr", ":4000", "HTTP network address")

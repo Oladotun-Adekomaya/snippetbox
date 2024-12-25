@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func home(w http.ResponseWriter, r *http.Request) {
+func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	// Check if the path is exactly '/'
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
@@ -26,9 +26,11 @@ func home(w http.ResponseWriter, r *http.Request) {
 	ts, err := template.ParseFiles(files...)
 
 	if err != nil {
-		log.Println(err.Error())
+
+		app.errorLog.Println(err.Error())
 		http.Error(w, "Internal Server Error", 500)
 		return
+
 	}
 
 	// Apply the parsed html template to w(the response)
