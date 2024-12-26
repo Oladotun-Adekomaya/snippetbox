@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	"errors"
 	"time"
 )
 
@@ -47,8 +48,15 @@ func (m *SnippetModel) Get(id int) (*Snippet, error) {
 	s := &Snippet{}
 
 	err := row.Scan(&s.ID, &s.Title, &s.Content, &s.Created, &s.Expires)
+	if err != nil {
+		if errors.is(err, sql.ErrNoRows) {
+			return nil, ErrNoRecord
+		} else {
+			return nil, err
+		}
+	}
 
-	return nil, nil
+	return s, nil
 }
 
 // Return the 10 most recently created snippets.
