@@ -16,3 +16,19 @@ type Snippet struct {
 type SnippetModel struct {
 	DB *sql.DB
 }
+
+// Insert a new snippet intto the DB
+func (m *SnippetModel) Insert(title string, content string, expires int) (int,
+	error) {
+	return 0, nil
+}
+
+// Return a specific snippet based on it id.
+func (m *SnippetModel) Get(id int) (*Snippet, error) {
+	return nil, nil
+}
+
+// Return the 10 most recently created snippets.
+func (m *SnippetModel) Latest() ([]*Snippet, error) {
+	return nil, nil
+}
